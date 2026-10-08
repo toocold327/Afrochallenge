@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AfroChallenge 🌍</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #07111f;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1c2c40;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #00d084;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #00d084;
+    }
+
+    .hero p {
+      color: #b8c4d1;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 28px;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .primary {
+      background: #00d084;
+      color: #061019;
+    }
+
+    .secondary {
+      background: #162538;
+      color: white;
+      margin-left: 8px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .section h2 {
+      margin-bottom: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #0e1c2c;
+      border: 1px solid #20344b;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #aebdca;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .challenge-box {
+      background: #0e1c2c;
+      border: 1px solid #20344b;
+      border-radius: 15px;
+      padding: 22px;
+      margin-top: 25px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0 15px;
+      background: #07111f;
+      border: 1px solid #2b4058;
+      border-radius: 9px;
+      color: white;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .challenge {
+      margin-top: 15px;
+      padding: 18px;
+      background: #13263b;
+      border-radius: 12px;
+    }
+
+    .challenge small {
+      color: #8fa3b8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #8091a4;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      nav a {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Afro<span>Challenge</span> 🌍</div>
+
+    <nav>
+      <a href="#challenges">Challenges</a>
+      <a href="#create">Create</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <h1>
+      Challenge Your Friends.<br>
+      <span>Show What You've Got.</span>
+    </h1>
+
+    <p>
+      Create fun challenges, invite your friends and compete with people
+      across Africa.
+    </p>
+
+    <div class="buttons">
+      <button class="primary" onclick="scrollToCreate()">
+        Create Challenge
+      </button>
+
+      <button class="secondary" onclick="scrollToChallenges()">
+        Explore Challenges
+      </button>
+    </div>
+
+  </section>
+
+  <section class="section" id="challenges">
+
+    <h2>🔥 Popular Challenges</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>🇳🇬 Nigeria vs Ghana</h3>
+        <p>
+          Which country has the best jollof rice?
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>⚽ Football Challenge</h3>
+        <p>
+          Who is the greatest footballer of all time?
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎵 Music Challenge</h3>
+        <p>
+          Pick your favorite African artist.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="create">
+
+    <h2>🚀 Create Your Challenge</h2>
+
+    <div class="challenge-box">
+
+      <label>Challenge title</label>
+
+      <input
+        type="text"
+        id="title"
+        placeholder="Example: Who is the funniest friend?"
+      >
+
+      <label>Your question</label>
+
+      <textarea
+        id="question"
+        placeholder="Write your challenge here..."
+      ></textarea>
+
+      <label>Category</label>
+
+      <select id="category">
+        <option>Funny</option>
+        <option>Football</option>
+        <option>Music</option>
+        <option>Food</option>
+        <option>Relationship</option>
+        <option>General</option>
+      </select>
+
+      <button class="primary" onclick="createChallenge()">
+        Create Challenge
+      </button>
+
+      <div id="result"></div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 AfroChallenge 🌍
+    <br><br>
+    Challenge. Invite. Compete.
+  </footer>
+
+  <script>
+
+    function scrollToCreate() {
+      document.getElementById("create").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    function scrollToChallenges() {
+      document.getElementById("challenges").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    function createChallenge() {
+
+      const title = document.getElementById("title").value.trim();
+      const question = document.getElementById("question").value.trim();
+      const category = document.getElementById("category").value;
+
+      if (title === "" || question === "") {
+        alert("Please fill in the challenge title and question.");
+        return;
+      }
+
+      const result = document.getElementById("result");
+
+      result.innerHTML = `
+        <div class="challenge">
+          <h3>${title}</h3>
+          <p>${question}</p>
+          <small>Category: ${category}</small>
+          <br><br>
+          <button class="primary" onclick="shareChallenge('${title}')">
+            Share Challenge
+          </button>
+        </div>
+      `;
+    }
+
+    function shareChallenge(title) {
+
+      const text =
+        "🔥 I created a challenge on AfroChallenge: " +
+        title +
+        " 🌍 Come and compete with me!";
+
+      if (navigator.share) {
+
+        navigator.share({
+          title: "AfroChallenge",
+          text: text,
+          url: window.location.href
+        });
+
+      } else {
+
+        navigator.clipboard.writeText(
+          text + " " + window.location.href
+        );
+
+        alert("Challenge message copied! Send it to your friends.");
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>
